@@ -1,38 +1,54 @@
-# Verbalia Open 📝
+# Verbalia Open
 
-**Skill professionale open source per preparare, analizzare, revisionare e verificare preliminarmente i verbali di riunione.**
+**Verbali di riunione con voti, fonti e controlli ripetibili.** Una skill open source per assemblee condominiali, CDA, riunioni di lavoro, cantieri e associazioni.
 
-[![CI](https://github.com/lupogno/verbalia-open/actions/workflows/ci.yml/badge.svg)](https://github.com/lupogno/verbalia-open/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![Version](https://img.shields.io/badge/version-0.3.1-informational.svg)
+[![Test su GitHub Actions](https://github.com/lupogno/verbalia-open/actions/workflows/ci.yml/badge.svg)](https://github.com/lupogno/verbalia-open/actions/workflows/ci.yml) [![Licenza MIT](https://img.shields.io/badge/licenza-MIT-29634e)](LICENSE) [![Ultima release](https://img.shields.io/github/v/release/lupogno/verbalia-open)](https://github.com/lupogno/verbalia-open/releases/latest)
 
-> **Stato:** versione pubblicabile come repository e utilizzabile come prototipo; NON è un servizio certificato, non sostituisce amministratore, segretario, avvocato o commercialista. Prima di usarla con persone reali occorrono valutazioni sulla privacy, sicurezza, corretta gestione delle registrazioni e accuratezza dei dati.
->
-> **Nome provvisorio:** prima di usare il marchio commercialmente, verificare la disponibilità e l'assenza di conflitti (esistono prodotti dal nome simile).
+[**Scarica la skill**](https://github.com/lupogno/verbalia-open/releases/latest) · [**Guarda la demo**](#demo-unassemblea-da-verificare) · [**Leggi il confronto**](#quando-scegliere-verbalia-open) · [**Prova in locale**](#prova-in-locale-senza-api)
 
-## Perché esiste
+## Demo: un’assemblea da verificare
 
-Una normale AI riassume. **Verbalia Open** struttura ODG, presenze, voti, deliberazioni, attività e prove; produce un verbale **in bozza** e un rapporto separato sulle incongruenze. L'AI non attribuisce fatti mai accertati e i controlli numerici non diventano pareri legali.
+Negli appunti dell’assemblea i lavori straordinari risultano approvati. Nel dossier manca però il voto di un avente diritto presente e la decisione è priva di una fonte associata. Verbalia conserva l’esito dichiarato, segnala le lacune e lascia il calcolo delle soglie in sospeso.
 
-## Funzioni disponibili nella v0.3
+![Audit dell’esempio fittizio: 6 rilievi, di cui 1 errore sulla registrazione e 5 avvisi su convocazione, fonti, voti e incarico.](assets/readme/audit-assemblea.png)
 
-| Capacità | Stato | Modalità |
-|---|---|---|
-| Skill Agent Skills con `SKILL.md` e riferimenti | ✅ | Agenti compatibili |
-| 5 modelli di verbale (condominio, CDA, cantiere, azienda, associazione) | ✅ | Markdown |
-| Caricamento dossier strutturati | ✅ | JSON locale |
-| Verifica campi, fonti, voti, presenti, incarichi | ✅ | Python offline |
-| Soglie numeriche **preliminari** per art. 1136 e 2388 | ✅ con limiti | Solo se regola indicata, con avvisi |
-| Produzione di verbale, sintesi, audit e azioni | ✅ | Markdown, JSON, CSV |
-| Esportazione DOCX e PDF di base | ✅ opzionale | Dipendenze `documents` |
-| Trascrizione da audio | ✅ opzionale | API esterna, opt-in esplicito |
-| Bozza da appunti e revisione AI | ✅ opzionale | API esterna, opt-in esplicito |
-| Interfaccia browser locale | ✅ opzionale | Streamlit |
-| Meeting Live: bot visibile in Meet, Zoom, Teams, Webex | ✅ prototipo con integrazione | Recall.ai, account e chiave richiesti; test con mock |
-| Trascrizione live via webhook e bozza cronologica | ✅ prototipo con integrazione | Ricevitore firmato + HTTPS pubblico; in italiano possibile ritardo |
-| Identificazione affidabile speaker e speaker verification | ◻️ | Riconoscimento fornito dal provider, da verificare |
-| Archiviazione multi-condominio, permessi utenti, e-sign, calendario e invio e-mail | ◻️ | In roadmap |
-| Motore giurisprudenziale aggiornato e validazione giuridica automatica | ❌ | Non disponibile / non rivendicato |
+Il grafico riproduce il risultato di `verbalia validate examples/caso_critico.json --json`. L’errore relativo all’autorizzazione della registrazione fa terminare il comando con codice `1`. [Dossier fittizio](examples/caso_critico.json)
 
-## Prova in 90 secondi (senza API)
+Per vedere il risultato completo di un secondo esempio, apri [verbale in bozza](demo/verbale-condominio.md), [sintesi](demo/sintesi-condominio.md), [audit JSON](demo/audit-condominio.json) e [registro azioni CSV](demo/azioni-condominio.csv).
+
+## Quando scegliere Verbalia Open
+
+| Se ti serve | Cosa offre Verbalia Open |
+|---|---|
+| Ricostruire una delibera | Collega i punti dell’ordine del giorno a fonti, presenze, deleghe e voti nominali. Per i profili implementati, verifica le soglie numeriche sulla regola indicata. |
+| Individuare cosa manca | Consegna un audit con riferimenti ai campi da completare. Voti incompleti e regole da qualificare lasciano il controllo delle soglie in sospeso. |
+| Tenere i dati sul tuo computer | Dal dossier JSON ottieni audit e documenti in locale. L’uso delle API per AI e videocall richiede attivazione esplicita. |
+| Adattare il flusso al tuo studio | Codice e modelli MIT, schema JSON e skill portabile per agenti compatibili. Puoi ispezionare le regole e rieseguire i controlli sui tuoi dati. |
+
+**Rispetto agli strumenti per le videocall**, Fireflies, Otter e MeetGeek documentano funzioni di trascrizione e sintesi, ricerca o highlight. Verbalia è pensato per il passaggio successivo, quando serve ricostruire la decisione nel verbale e indicare quali dati mancano. [Fireflies](https://guide.fireflies.ai/articles/9547055509-fireflies-ai-meeting-summaries) · [Otter](https://otter.ai/) · [MeetGeek](https://support.meetgeek.ai/en/articles/6021900-highlights-summaries)
+
+**Nel condominio**, VerbaliAI presenta la verbalizzazione dentro un gestionale, CondominioDoc AI offre anche ricerca giurisprudenziale e calcolatori, mentre Verbale.online mostra bozze con voti e millesimi. Il vantaggio di Verbalia Open emerge quando servono codice ispezionabile, verifica locale ripetibile e un audit esportabile, anche per CDA e altri tipi di riunione. [VerbaliAI](https://verbaliai.it/) · [CondominioDoc AI](https://condominiodoc.ai/) · [Verbale.online](https://verbale.online/)
+
+[Confronto per singolo strumento e metodo](docs/COMPARATIVA.md)
+
+## Test e risultati
+
+![Suite v0.3.1: 18 test sul motore verbali e quorum, 11 su videocall e webhook, 5 sui comandi e 3 su privacy e risposte AI.](assets/readme/test-v0.3.1.png)
+
+Tutti i **37 test della v0.3.1** passano su Python **3.10, 3.12, 3.13 e 3.14**. Tra i casi verificati ci sono voti duplicati, soglie insufficienti, decisioni senza fonti, trascrizione senza conferma ed eventi webhook con firma errata. Per la videocall si usano API simulate. [Esecuzione su GitHub Actions](https://github.com/lupogno/verbalia-open/actions/runs/43591819967) · [Codice dei test](tests/)
+
+<details>
+<summary>Esegui i test sul tuo computer</summary>
+
+```bash
+python -m pip install -e .
+python -m unittest discover -s tests -v
+python tools/check_repo.py
+```
+
+</details>
+
+## Prova in locale senza API
 
 ```bash
 # Da Python 3.10+
@@ -42,11 +58,9 @@ verbalia bundle examples/condominio.json --out output/demo
 verbalia render examples/condominio.json --format md --out output/demo/verbale.md
 ```
 
-Puoi consultare direttamente un [verbale dimostrativo](demo/verbale-condominio.md) e il relativo [audit](demo/audit-condominio.json), entrambi basati su dati fittizi.
+Esegui i comandi dalla cartella del repository. Trovi bozza, sintesi, audit e registro azioni in `output/demo`.
 
-In `output/demo` trovi `verbale-bozza.md`, `sintesi.md`, `audit.json`, `azioni.csv`. Tutto offline. Il comando `validate` termina con codice 1 in caso di errori, ma può riportare *warning* con codice 0.
-
-### Nuovo — partecipante VERBALIA LIVE in videocall
+## Verbalia Live in videocall
 
 Puoi invitare un **assistente visibile** in una riunione su Meet, Zoom, Teams o Webex tramite Recall.ai. L'host lo ammette quando la piattaforma lo richiede. Il bot entra con l'acquisizione disattivata. Avvia la trascrizione quando hai informato i presenti e verificato la base giuridica e gli eventuali consensi. I test automatici usano API simulate. L'ingresso e la trascrizione su videocall reali sono da collaudare.
 
@@ -62,7 +76,7 @@ verbalia live leave UUID_BOT --confirm-leave
 
 Per aggiornare una trascrizione durante la riunione, occorre **anche** un ricevitore webhook con segreto di firma e endpoint HTTPS pubblico. Vedi [guida Verbalia Live](docs/MEETING_LIVE.md). In italiano la trascrizione live può arrivare con diversi minuti di ritardo. Recall.ai è un servizio esterno con proprie condizioni e costi.
 
-### Word, PDF e interfaccia grafica
+## Word, PDF e interfaccia grafica
 
 ```bash
 python -m pip install -e '.[documents,ui]'
@@ -73,7 +87,7 @@ streamlit run src/verbalia_open/ui.py --server.address 127.0.0.1
 
 Le esportazioni sono **di base** (il Word non conserva ancora tutte le tabelle come tabelle native). Utilizzare una revisione visiva prima di inviare documenti.
 
-### Da appunti ad una bozza con AI (API esterna opt-in)
+## Bozza da appunti con AI
 
 ```bash
 python -m pip install -e '.[ai]'
@@ -93,32 +107,10 @@ Scegli un modello disponibile nel tuo account API. `--allow-external-processing`
 
 Per un GPT personalizzato senza caricamento skill da filesystem puoi utilizzare le istruzioni di `SKILL.md` come base del comportamento, allegando i modelli. Per avere *esecuzione di script*, l'ambiente deve supportarla.
 
-## Struttura
+## Revisione e documentazione
 
-```text
-SKILL.md                    istruzioni portabili per AI
-references/                protocolli e controlli specialistici
-assets/templates/           cinque modelli di verbale
-src/verbalia_open/          CLI, verifiche, esportazioni, integrazione AI opzionale
-schemas/meeting.schema.json modello dati
-examples/                  dati di prova solo fittizi
-tests/                     test automatici
-.github/workflows/          CI e rilascio GitHub
-docs/                      privacy, legge, roadmap, videocall e pubblicazione
-```
+L’approvazione spetta alle persone autorizzate. L’esito dichiarato resta distinto dalla verifica numerica, che dipende dai dati e dal profilo di quorum selezionato. [Quorum](docs/QUORUM.md) · [Fonti normative](docs/FONTI_NORMATIVE.md) · [Privacy e GDPR](docs/PRIVACY_GDPR.md)
 
-## Principi di fiducia
+[Istruzioni della skill](SKILL.md) · [Modelli](assets/templates/) · [Schema dati](schemas/meeting.schema.json) · [Esempi](examples/) · [Roadmap](docs/ROADMAP.md)
 
-1. `approvato` è un **esito dichiarato**, non un giudizio dell'AI.
-2. `favorable=true` è solo un **risultato numerico** condizionato ai dati e alla categoria di soglia indicata.
-3. Se mancano fonti, voti, quote, statuto, convocazioni, il verbale resta in revisione.
-4. Non sono disponibili registrazione nascosta, invio automatico a terzi e firme simulate.
-5. Contenuti esterni e trascrizioni sono *dati non fidati*: la skill ignora istruzioni nascoste nei documenti.
-
-Per le riunioni in diretta leggere [Verbalia Live](docs/MEETING_LIVE.md). Per l'ambito normativo leggere [Fonti normative](docs/FONTI_NORMATIVE.md) e [Quorum](docs/QUORUM.md); per dati personali [Privacy e GDPR](docs/PRIVACY_GDPR.md).
-
-## Pubblicazione e collaborazione
-
-Il progetto è MIT e accetta contributi: [contributi](CONTRIBUTING.md), [sicurezza](SECURITY.md), [guida alla pubblicazione](docs/PUBBLICAZIONE_GITHUB.md), [roadmap](docs/ROADMAP.md).
-
-La [pagina delle release](https://github.com/lupogno/verbalia-open/releases) ospita gli archivi della skill e i relativi checksum quando il rilascio è pubblicato.
+[Licenza MIT](LICENSE) · [Contribuisci](CONTRIBUTING.md) · [Sicurezza](SECURITY.md) · [Guida alla pubblicazione](docs/PUBBLICAZIONE_GITHUB.md)
