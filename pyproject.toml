@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verbalia-open"
+version = "0.3.1"
+description = "Skill open source per verbali verificabili, delibere, votazioni e follow-up"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Verbalia Open contributors"}]
+keywords = ["agent-skills", "verbali", "condominio", "governance", "meeting-minutes", "ai"]
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Office/Business"]
+dependencies = []
+
+[project.optional-dependencies]
+ai = ["openai>=1.70"]
+documents = ["python-docx>=1.1", "reportlab>=4.0"]
+ui = ["streamlit>=1.40"]
+all = ["openai>=1.70", "python-docx>=1.1", "reportlab>=4.0", "streamlit>=1.40"]
+
+[project.scripts]
+verbalia = "verbalia_open.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+verbalia_open = ["py.typed"]

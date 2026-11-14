@@ -1,0 +1,11 @@
+{
+  "id": "ESEMPIO-CDA-001", "type": "cda", "company_type": "spa", "statute_reviewed": true,
+  "title": "CDA — piano investimenti 2027", "date": "2026-11-09", "start_time": "09:00", "end_time": "10:10",
+  "location": "Sede sociale, riunione in presenza", "chair": "Presidente A", "secretary": "Segretario B",
+  "recording_authorization": "not_applicable", "used_recording": false,
+  "voters_total": 5,
+  "attendees": [{"id": "A1", "name": "Presidente A", "present": true}, {"id": "A2", "name": "Consigliere B", "present": true}, {"id": "A3", "name": "Consigliere C", "present": true}, {"id": "A4", "name": "Consigliere D", "present": false}, {"id": "A5", "name": "Consigliere E", "present": false}],
+  "sources": [{"id": "APP-01", "type": "notes", "description": "Appunti simulati CDA"}],
+  "agenda": [{"subject": "Aggiornamento piano investimenti", "discussion": "Esaminate due ipotesi.", "resolution_text": "Approvata la versione A, subordinatamente ai controlli previsti dallo statuto.", "outcome": "approvato", "quorum_rule": "ordinaria", "votes": [{"voter_id": "A1", "choice": "favorevole"}, {"voter_id": "A2", "choice": "favorevole"}, {"voter_id": "A3", "choice": "contrario"}], "evidence": ["APP-01"]}],
+  "actions": [{"task": "Predisporre prospetto finanziario", "owner": "Direzione amministrativa", "due_date": "2026-12-01", "evidence": ["APP-01"]}]
+}

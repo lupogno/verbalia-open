@@ -1,0 +1,9 @@
+{
+  "id": "ESEMPIO-CRITICO-001", "type": "condominio", "title": "Assemblea con dati incompleti", "date": "2026-11-11", "location": "Da confermare", "chair": "Presidente", "secretary": "Segretario", "recording_authorization": "unknown", "used_recording": true,
+  "voters_total": 8, "total_millesimi": 1000, "convocation": 2,
+  "all_entitled_notified": false,
+  "attendees": [{"id": "U1", "name": "Proprietario 1", "present": true, "millesimi": 120}, {"id": "U2", "name": "Proprietario 2", "present": true, "millesimi": 110}],
+  "sources": [{"id": "A1", "type": "notes", "description": "Note parziali"}],
+  "agenda": [{"subject": "Lavori straordinari", "outcome": "approvato", "quorum_rule": "manuale", "discussion": "Esito riferito oralmente", "resolution_text": "Lavori non precisati", "evidence": [], "votes": [{"voter_id": "U1", "choice": "favorevole"}]}],
+  "actions": [{"task": "Chiedere documentazione al tecnico", "owner": null, "due_date": null, "evidence": ["A1"]}]
+}

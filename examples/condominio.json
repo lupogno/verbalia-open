@@ -1,0 +1,47 @@
+{
+  "id": "ESEMPIO-CONDO-001",
+  "type": "condominio",
+  "title": "Condominio Via delle Magnolie — Assemblea ordinaria",
+  "date": "2026-11-10",
+  "start_time": "18:00",
+  "end_time": "19:40",
+  "location": "Sala riunioni, Firenze",
+  "chair": "Maria Bianchi",
+  "secretary": "Giulia Rinaldi",
+  "recording_authorization": "not_applicable",
+  "used_recording": false,
+  "voters_total": 6,
+  "total_millesimi": 1000,
+  "convocation": 2,
+  "all_entitled_notified": true,
+  "attendees": [
+    {"id": "U1", "name": "Anna Rossi", "present": true, "millesimi": 180},
+    {"id": "U2", "name": "Bruno Verdi", "present": true, "millesimi": 120, "represented_by": "Anna Rossi"},
+    {"id": "U3", "name": "Carla Neri", "present": true, "millesimi": 110},
+    {"id": "U4", "name": "Dario Blu", "present": false, "millesimi": 210},
+    {"id": "U5", "name": "Elena Galli", "present": false, "millesimi": 170},
+    {"id": "U6", "name": "Fabio Costa", "present": false, "millesimi": 210}
+  ],
+  "sources": [{"id": "APP-01", "type": "notes", "description": "Appunti di prova, interamente fittizi"}, {"id": "REG-01", "type": "document", "description": "Elenco presenze e delega di prova"}],
+  "agenda": [
+    {
+      "subject": "Manutenzione ordinaria ingresso",
+      "discussion": "Presentati due preventivi; deliberazione sul primo preventivo.",
+      "resolution_text": "Si approva l'incarico per € 2.400, oltre IVA se dovuta, previa verifica del preventivo allegato.",
+      "outcome": "approvato",
+      "quorum_rule": "ordinaria",
+      "evidence": ["APP-01", "REG-01"],
+      "votes": [{"voter_id": "U1", "choice": "favorevole"}, {"voter_id": "U2", "choice": "favorevole"}, {"voter_id": "U3", "choice": "favorevole"}]
+    },
+    {
+      "subject": "Rifacimento facciata",
+      "discussion": "Il tema è stato discusso, ma non è stata posta in votazione alcuna proposta.",
+      "resolution_text": null,
+      "outcome": "rinviato",
+      "quorum_rule": "manuale",
+      "evidence": ["APP-01"],
+      "votes": []
+    }
+  ],
+  "actions": [{"task": "Richiedere il preventivo aggiornato per la facciata", "owner": "Amministratrice", "due_date": "2026-12-05", "evidence": ["APP-01"]}]
+}

@@ -1,0 +1,19 @@
+# VERBALE RIUNIONE OPERATIVA DI CANTIERE — BOZZA
+Intervento: [CANTIERE] · Data/ora: [DATI] · Luogo: [LUOGO]
+Committente: [NOME] · DL: [NOME] · Imprese: [DENOMINAZIONI]
+Presenti e ruoli: [ELENCO]
+
+## Stato dei lavori
+[FATTI RISCONTRATI E FONTI]
+
+## Questioni tecniche discusse
+[PUNTO, POSIZIONI DELLE PARTI, DATI / PROVE, EVENTUALI RISERVE]
+
+## Decisioni, istruzioni, riserve
+[TESTO PRECISO, AUTORE/COMPETENZA, LIMITI E RIFERIMENTI]
+
+## Azioni
+[ATTIVITÀ, RESPONSABILE, SCADENZA, DOCUMENTI]
+
+## Allegati e sottoscrizioni
+[ALLEGATI CON ID, FIRME DA RACCOGLIERE]

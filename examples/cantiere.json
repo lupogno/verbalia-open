@@ -1,0 +1,10 @@
+{
+  "id": "ESEMPIO-CANT-001", "type": "cantiere", "title": "Coordinamento lavori — cantiere dimostrativo", "date": "2026-11-12",
+  "start_time": "08:30", "end_time": "09:15", "location": "Cantiere fittizio, Toscana", "chair": "Direttore lavori", "secretary": "Tecnico incaricato",
+  "recording_authorization": "not_applicable", "used_recording": false,
+  "voters_total": 3,
+  "attendees": [{"id": "T1", "name": "DL", "present": true}, {"id": "T2", "name": "Impresa", "present": true}, {"id": "T3", "name": "Committente", "present": true}],
+  "sources": [{"id": "AP-1", "type": "notes", "description": "Appunti fittizi di coordinamento"}],
+  "agenda": [{"subject": "Sequenza impermeabilizzazioni", "discussion": "Valutati i tempi di asciugatura e la disponibilità materiali.", "resolution_text": "Il DL richiede l'invio delle schede tecniche prima della posa.", "outcome": "discusso", "quorum_rule": "manuale", "votes": [], "evidence": ["AP-1"]}],
+  "actions": [{"task": "Inviare schede tecniche prodotti", "owner": "Impresa", "due_date": "2026-11-16", "evidence": ["AP-1"]}]
+}

@@ -1,0 +1,23 @@
+# Credenziali, dati sensibili, output
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+dist/
+build/
+output/
+outputs/
+private/
+secrets/
+local-data/
+*.log
+.DS_Store

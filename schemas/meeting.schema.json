@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/lupogno/verbalia-open/main/schemas/meeting.schema.json",
+  "title": "Verbalia Open meeting dossier v0.2",
+  "type": "object",
+  "required": [
+    "type",
+    "title",
+    "agenda"
+  ],
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "type": {
+      "enum": [
+        "condominio",
+        "cda",
+        "azienda",
+        "cantiere",
+        "associazione",
+        "altro"
+      ]
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "start_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "end_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "chair": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "secretary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "recording_authorization": {
+      "enum": [
+        "confirmed",
+        "not_applicable",
+        "unknown",
+        null
+      ]
+    },
+    "used_recording": {
+      "type": "boolean"
+    },
+    "company_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "statute_reviewed": {
+      "type": "boolean"
+    },
+    "voters_total": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "total_millesimi": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "convocation": {
+      "enum": [
+        1,
+        2,
+        null
+      ]
+    },
+    "all_entitled_notified": {
+      "type": "boolean"
+    },
+    "attendees": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "present"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "present": {
+            "type": "boolean"
+          },
+          "millesimi": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "represented_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "agenda": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "subject",
+          "outcome"
+        ],
+        "properties": {
+          "subject": {
+            "type": "string"
+          },
+          "discussion": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "resolution_text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "outcome": {
+            "enum": [
+              "approvato",
+              "respinto",
+              "rinviato",
+              "discusso",
+              "non_determinato"
+            ]
+          },
+          "quorum_rule": {
+            "enum": [
+              "ordinaria",
+              "meta_valore",
+              "due_terzi_valore",
+              "manuale"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "votes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "voter_id",
+                "choice"
+              ],
+              "properties": {
+                "voter_id": {
+                  "type": "string"
+                },
+                "choice": {
+                  "enum": [
+                    "favorevole",
+                    "contrario",
+                    "astenuto"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "owner": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "due_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

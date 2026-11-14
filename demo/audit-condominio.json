@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.2",
+  "generated_at_utc": "2026-11-13T23:48:31.265785+00:00",
+  "meeting_id": "ESEMPIO-CONDO-001",
+  "checks": {
+    "status": "da_verificare",
+    "issues": [],
+    "resolutions": [
+      {
+        "subject": "Manutenzione ordinaria ingresso",
+        "outcome": "approvato",
+        "rule": "ordinaria",
+        "present_heads": 3,
+        "present_millesimi": "410",
+        "favorable_heads": 3,
+        "favorable_millesimi": "410",
+        "constituted": true,
+        "favorable": true,
+        "message": "Soglie aritmetiche art. 1136 c.c. (profilo dichiarato); verifica giuridica necessaria"
+      },
+      {
+        "subject": "Rifacimento facciata",
+        "outcome": "rinviato",
+        "rule": "manuale",
+        "present_heads": 3,
+        "present_millesimi": "410",
+        "favorable_heads": 0,
+        "favorable_millesimi": "0",
+        "constituted": null,
+        "favorable": null,
+        "message": "Regola di maggioranza da qualificare per legge"
+      }
+    ],
+    "notice": "Controllo preliminare dei dati: non costituisce verifica legale né certificazione di validità."
+  },
+  "approval_state": "NOT_APPROVED",
+  "review_required": true
+}
